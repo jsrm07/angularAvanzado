@@ -9,7 +9,10 @@ import { APP_ROUTES } from './app.routes';
 
 // Modulos
 import {PagesModule } from './pages/pages.module';
-import { SharedModule } from './shared/shared.module';
+
+// Servicios
+//import { SettingsService } from './services/services.index';
+import { ServiceModule } from './services/service.module';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -19,19 +22,26 @@ import { RegisterComponent } from './login/register.component';
 
 
 
+
 @NgModule({
+  /* Se declaran componentes */
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent    
   ],
+  /* Se importan módulos */
   imports: [
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
-  ],
-  providers: [],
+    FormsModule,
+    ServiceModule
+  ],  
+  /* Proveen de Servicios */
+  providers: [/* SettingsService */],
+
+  /* Se ejecutan en el arranque de la aplicación */
   bootstrap: [AppComponent]
 })
 export class AppModule { }
